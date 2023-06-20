@@ -1,46 +1,49 @@
-# Getting Started with Create React App
+task 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Assignment
+Design: OMNIC_test (Ukraine)
 
-## Available Scripts
+Form names:
+"Home."
+"Packed"
+"Cell Size"
 
-In the project directory, you can run:
+General description of the flow:
+User goes to a link with device ID (uid) - go to "Home" form.
 
-### `npm start`
+Request basic information about the device from the back-end - from the response display the device number on the forms.
+The user can click on the green rectangle with a picture of a llama and the caption "Send a parcel through a post office" - go to the "Packed" screen.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+On the "Packed" form:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+On the "I packed well" button, go to the "Select Parcel Size" form.
 
-### `npm test`
+On the "Cell Size" form:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Request information about available cells from the back-end.
+Display the size map
+If the size is not available, highlight the background of the size Red.
+The user can select a size, highlight the background in Green when selected, then activate the "Confirm" button.
 
-### `npm run build`
+Clarification of the implementation:
+Transition to the main page (transition to the site) to implement with the root path-parameter - device_uid, which is used for further transitions.
+Selection of the names of transitions (route) - arbitrary, but must reflect the logical content of the page.
+Some transitions may be intentionally omitted in the description of the flow - it is provided that they are obvious from the design.
+Some elements have no active actions at the moment - it is possible to add logic for them.
+API 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Queries:
+Basic device information.GET {base_url}/api/2.0.0/public/device/{device_uid}/.Response data: use data.device field to display device number
+Information about available cells.GET {base_url}/api/2.0.0/public/orders/device/{device_uid}/cells/statuses/?type=5.Response data: use field data.cell_types - size array (use params.width and params.height for analysis)
+The environment: 
+URL backend: https://dev.hub.omnic.solutions/ ( - this is the development environment)
+Test data: 
+device_uid : 34670a76-6022-4df5-ac1d-68f88589c904
+Criteria for evaluating the implementation:
+Basic flow.
+Project layout/structure (division into components and modules).
+Implementation of requests/processing of API responses.
+Use of TypeScript.
+Description of the styles. Adaptability.
+Logical workflow and project startup.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
