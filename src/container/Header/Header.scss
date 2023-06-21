@@ -1,0 +1,104 @@
+@import '/src/utils/variables.scss';
+
+.header{
+    padding-bottom: 8px;
+
+    a{
+        transition: all 0.3s;
+        display: block;
+
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+
+    .container{
+        padding: 30px 15px 20px 15px;
+    }
+    .row.main{
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+    }
+    .logo{
+        height: 20px;
+        a{
+            height: 100%;
+            img{
+                display: block;
+                height: 100%;
+            }
+
+            &:hover{
+                opacity: 0.6;
+            }
+        }
+    }
+    .info >.row{
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 20px;
+    }
+    .info{
+        font-family: $heading-font-family;
+    }
+    .instruction{
+        font-size: 14px;
+        font-weight: 600;
+        color: $text-gray;
+    }
+    .post-office-info{
+        font-size: 16px;
+        font-weight: 600;
+        color: $text-blue;
+    }
+
+    .border-line{
+        background-color: $bg-gray;
+        height: 4px;
+        width: 100%;
+
+        &::after{
+            content: '';
+            display: block;
+            background: linear-gradient(to right, $bg-darkBlue, $bg-blue);
+            height: 100%;
+            width: 120px;
+        }
+    }
+}
+
+@media (min-width: 600px) {
+    .header {
+        .logo{
+            height: 24px;
+        }
+        .info>.row {
+            gap: 44px;
+        }
+        .instruction {
+            font-size: 16px;
+        }
+
+        .post-office-info {
+            font-size: 22px;
+        }
+
+        .border-line {
+            &::after {
+                width: 25%;
+            }
+        }
+
+    }
+}
+
+@media (min-width: 900px) {
+    .header{
+        .container{
+            padding: 30px 48px 20px 44px;
+        }
+        
+    }
+}
