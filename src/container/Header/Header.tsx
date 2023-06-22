@@ -1,9 +1,12 @@
 import './Header.scss'
 import logo from 'assets/logo.svg'
+import { DeviceNumber } from 'container/App/App'
 import { Link, NavLink } from 'react-router-dom'
 
-type Props = {}
-const Header = (props: Props) => {
+type Props = {
+    deviceNumber: DeviceNumber
+}
+const Header = ({ deviceNumber }: Props) => {
     return (
         <header className="header">
             <div className="container">
@@ -15,17 +18,22 @@ const Header = (props: Props) => {
                     </div>
                     <div className="info">
                         <div className="row">
-                            <NavLink to={'/'} className="instruction">
+                            <NavLink
+                                to={'/instruction'}
+                                className="instruction"
+                            >
                                 Інструкція
                             </NavLink>
-                            <Link to={'/'} className='post-office-info'>
-                                Поштомат №1234
+                            <Link to={'/'} className="post-office-info">
+                                {deviceNumber === undefined
+                                    ? `Add your post office`
+                                    : `Поштомат №${deviceNumber}`}
                             </Link>
                         </div>
                     </div>
                 </div>
             </div>
-            <div className='border-line'></div>
+            <div className="border-line"></div>
         </header>
     )
 }

@@ -1,0 +1,39 @@
+@import '/src/utils/variables.scss';
+
+.option{
+    background-color: $bg-blue;
+    color: $text-white;
+    border-radius: 20px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border: none;
+
+    transition: all 0.3s;
+
+    img{
+        display: block;
+        width: 100%;
+    }
+    h3 {
+        font-family: $heading-font-family;
+        font-weight: 700;
+        font-size: 18px;
+        text-align: center;
+        line-height: 128%;
+        text-transform: uppercase;
+
+        padding: 20px 80px;
+    }
+
+    &:hover{
+        opacity: 0.8;
+    }
+}
+
+@media (min-width: 750px) {
+    .option{
+        h3{
+            font-size: 20px;
+        }
+    }
+}

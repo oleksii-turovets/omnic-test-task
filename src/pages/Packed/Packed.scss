@@ -1,0 +1,71 @@
+@import '/src/utils/variables.scss';
+
+.packed{
+    .warning{
+        font-family: $heading-font-family;
+        font-weight: 500;
+        font-size: 20px;
+        text-align: center;
+        margin-bottom: 70px;
+    }
+    .packing-instruction{
+        margin-bottom: 70px;
+        .row{
+            flex-direction: column;
+            row-gap: 30px;
+            column-gap: 54px;
+            align-items: center;
+        }
+        .image{
+            img{
+                display: block;
+                width: 100%;
+            }
+        }
+        .text-instr{
+            max-width: 350px;
+            list-style: decimal;
+            padding-left: 15px;
+            li{
+                font-family: $body-font-family;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 18px;
+            }
+            li:not(:last-child){
+                padding-bottom: 16px;
+            }
+        }
+    }
+    .action-btns {
+        display: flex;
+        flex-wrap: wrap-reverse;
+        row-gap: 20px;
+        column-gap: 60px;
+        justify-content: center;
+        align-items: center;
+        .action-btn{
+            flex: 1 0 100%;
+        }
+    }
+}
+
+@media (min-width: 600px) {
+    .packed {
+        .packing-instruction {
+            margin-bottom: 100px;
+            .row {
+                flex-direction: row;
+            }
+        }
+        .action-btns {
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+
+            .action-btn {
+                flex: 1 0 auto;
+            }
+        }
+    }
+}

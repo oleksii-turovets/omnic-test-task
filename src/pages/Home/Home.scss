@@ -1,0 +1,63 @@
+@import '/src/utils/variables.scss';
+
+.home {
+    
+    .welcome{
+        font-family: $heading-font-family;
+        font-weight: 600;
+        font-size: 32px;
+        text-align: center;
+        margin-bottom: 12px;
+    }
+    .welcome-question{
+        font-family: $heading-font-family;
+        font-weight: 500;
+        font-size: 20px;
+        text-align: center;
+        margin-bottom: 45px;
+    }
+
+    .options {
+        width: 100%;
+        .row{
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .option{
+            width: 100%;
+            max-width: 450px;
+            flex: 0 0 100%;
+        }
+    }
+}
+
+@media (min-width: 750px) {
+    .home {
+        .welcome-question{
+            margin-bottom: 68px;
+        }
+        .options {
+            .option {
+                max-width: calc((100% - 60px)/2);
+                flex: 0 0 calc((100% - 60px)/2);
+            }
+        }
+    }
+}
+
+@media (min-width: 960px) {
+    .home {
+        .options {
+            width: 930px;
+            .row {
+                gap: 60px;
+            }
+            .option {
+                max-width: calc((100% - 60px)/2);
+                flex: 0 0 calc((100% - 60px)/2);
+            }
+        }
+    }
+}

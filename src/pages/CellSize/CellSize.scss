@@ -1,0 +1,144 @@
+@import '/src/utils/variables.scss';
+
+.cell-size{
+    .title {
+        font-family: $heading-font-family;
+        font-weight: 500;
+        font-size: 20px;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .cells-list{
+        display: flex;
+        width: 100%;
+        gap: 20px;
+        margin-bottom: 52px;
+
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-content: stretch;
+
+        .cells-list-1{
+            flex: 3 1 100%;
+        }
+        .cells-list-2{
+            flex: 4 1 100%;
+        }
+        .cells-list-3{
+            flex: 5 1 100%;
+        }
+
+        [class*='cells-list-']{
+            >ul{
+                height: 100%;
+                display: flex;
+                gap: 20px;
+                flex-direction: column;
+                align-content: stretch;
+            }
+        }
+    }
+
+    .action-btns {
+        display: flex;
+        flex-wrap: wrap-reverse;
+        row-gap: 20px;
+        column-gap: 60px;
+        justify-content: center;
+        align-items: center;
+
+        .action-btn {
+            flex: 1 0 100%;
+            padding-left: 50px;
+            padding-right: 50px;
+            max-width: fit-content;
+        }
+    }
+
+    .approving-message{
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 5;
+        width: 100%;
+        height: 100%;
+        background: rgba($bg-gray, 0.7);
+
+        .message{
+            position: absolute;
+            z-index: 10;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: calc(100% - 30px);
+            max-width: 350px;
+            background: $bg-white;
+            padding: 20px 25px;
+        }
+        h4{
+            font-family: $heading-font-family;
+            font-weight: 500;
+            font-size: 20px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        &.message-shown{
+            display: block;
+        }
+        &.message-closed{
+            display: none;
+        }
+    }
+}
+
+@media (min-width: 500px) {
+    .cell-size {
+        .cells-list {
+            .cells-list-1 {
+                flex: 3 1 calc((100% - 20px) / 7 * 3);
+            }
+    
+            .cells-list-2 {
+                flex: 4 1 calc((100% - 20px) / 7 * 4);
+            }
+    
+            .cells-list-3 {
+                flex: 5 1 100%;
+            }
+        }
+    }
+}
+@media (min-width: 600px) {
+    .cell-size {
+        .action-btns {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+    
+            .action-btn {
+                flex: 1 0 auto;
+            }
+        }
+    }
+}
+
+@media (min-width: 800px) {
+    .cell-size{
+        .cells-list {
+            width: 770px;   
+            flex-wrap: no-wrap;
+            .cells-list-1 {
+                flex: 3 1 auto;
+            }
+        
+            .cells-list-2 {
+                flex: 4 1 auto;
+            }
+        
+            .cells-list-3 {
+                flex: 5 1 auto;
+            }
+        }
+    }
+}

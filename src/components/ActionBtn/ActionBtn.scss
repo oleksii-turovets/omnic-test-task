@@ -1,0 +1,40 @@
+@import '/src/utils/variables.scss';
+
+.action-btn{
+    display: block;
+    border: 2px solid $bg-blue;
+    border-radius: 4px;
+    padding: 17px;
+
+    text-align: center;
+    font-family: $heading-font-family;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.28;
+    text-transform: uppercase;
+    transition: all 0.3s;
+
+
+    &.action-btn-solid {
+        color: $text-white;
+        background-color: $bg-blue;
+    }
+    &.action-btn-outlined {
+        color: $text-blue;
+        background: none;
+    }
+
+    &:hover {
+        opacity: 0.7;
+    }
+
+    &.action-btn-disabled {
+        pointer-events: none;
+        background: none;
+        border-color: $bg-gray;
+        color: $bg-gray;
+    }
+}
+
+
+

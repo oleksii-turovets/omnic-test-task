@@ -1,1 +1,11 @@
 @import '/src/utils/variables.scss';
+
+.main-content{
+    padding: 112px 0 100px;
+    
+    .container{
+        width: fit-content;
+        padding: 0 15px;
+        margin: 0 auto;
+    }
+}

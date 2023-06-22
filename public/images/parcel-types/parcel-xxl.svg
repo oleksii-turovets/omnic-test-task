@@ -196,9 +196,9 @@
 <path d="M43.637 46.689L43.5242 46.8005L44.2007 47.0233V46.9119L43.637 46.689Z" fill="#2C343D"/>
 <path d="M44.4257 46.9119V47.137L44.6551 47.0245V46.9119H44.4257Z" fill="#2C343D"/>
 <path d="M47.9209 45.3545L48.3719 45.1316L48.4847 45.0202L48.8229 44.7974H48.9357L49.274 44.6859L49.1612 44.463L44.6509 46.9146V47.026L46.2295 46.246L46.455 46.1345L47.9209 45.3545Z" fill="#2C343D"/>
-<g style="mix-blend-mode:lighten">
+<!-- <g style="mix-blend-mode:lighten">
 <rect y="4.57764e-05" width="98.267" height="115.779" fill="#032EDD"/>
-</g>
+</g> -->
 <defs>
 <linearGradient id="paint0_linear_1_579" x1="32.4919" y1="77.8479" x2="-3.72017" y2="92.9656" gradientUnits="userSpaceOnUse">
 <stop offset="0.15" stop-color="#EDEDED"/>
