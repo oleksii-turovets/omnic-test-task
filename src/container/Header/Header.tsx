@@ -5,8 +5,9 @@ import { Link, NavLink } from 'react-router-dom'
 
 type Props = {
     deviceNumber: DeviceNumber
+    getDeviceName: () => void
 }
-const Header = ({ deviceNumber }: Props) => {
+const Header = ({ deviceNumber, getDeviceName }: Props) => {
     return (
         <header className="header">
             <div className="container">
@@ -24,7 +25,14 @@ const Header = ({ deviceNumber }: Props) => {
                             >
                                 Інструкція
                             </NavLink>
-                            <Link to={'/'} className="post-office-info">
+                            <Link
+                                to={'/'}
+                                onClick={(e) => {
+                                    e.preventDefault()
+                                    getDeviceName()
+                                }}
+                                className="post-office-info"
+                            >
                                 {deviceNumber === undefined
                                     ? `Add your post office`
                                     : `Поштомат №${deviceNumber}`}

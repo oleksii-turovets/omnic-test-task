@@ -15,19 +15,29 @@ const Main = ({ deviceUId, backUrl }: Props) => {
     return (
         <div className="main-content">
             <div className="container">
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/packed" element={<Packed />} />
-                    <Route
-                        path="/cell-size"
-                        element={
-                            <CellSize deviceUId={deviceUId} backUrl={backUrl} />
-                        }
-                    />
-                    <Route path="/instruction" element={<PageInProgress />} />
-                    <Route path="/back-to-shop" element={<PageInProgress />} />
-                    <Route path="*" element={<PageNotFound />} />
-                </Routes>
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/packed" element={<Packed />} />
+                        <Route
+                            path="/cell-size"
+                            element={
+                                <CellSize
+                                    deviceUId={deviceUId}
+                                    backUrl={backUrl}
+                                />
+                            }
+                        />
+                        <Route
+                            path="/instruction"
+                            element={<PageInProgress />}
+                        />
+                        <Route
+                            path="/back-to-shop"
+                            element={<PageInProgress />}
+                        />
+
+                        <Route path="*" element={<PageNotFound />} />
+                    </Routes>
             </div>
         </div>
     )
