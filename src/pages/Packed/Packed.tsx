@@ -9,7 +9,7 @@ const Packed = (props: Props) => {
             <div className="packing-instruction">
                 <div className="row">
                     <div className="image">
-                        <img src="images/packed-parcel.svg" />
+                        <img src="/images/packed-parcel.svg" />
                     </div>
                     <ol className="text-instr">
                         <li>

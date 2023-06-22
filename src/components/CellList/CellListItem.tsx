@@ -29,7 +29,7 @@ const CellListItem = ({
         >
             <div className="img">
                 <img
-                    src={`images/parcel-types/parcel-${labelsArray[index]}.svg`}
+                    src={`/images/parcel-types/parcel-${labelsArray[index]}.svg`}
                 />
             </div>
             <div className="text-info">

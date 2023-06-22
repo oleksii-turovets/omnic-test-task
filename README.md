@@ -33,10 +33,10 @@ Some elements have no active actions at the moment - it is possible to add logic
 API 
 
 Queries:
-Basic device information.GET {base_url}/api/2.0.0/public/device/{device_uid}/.Response data: use data.device field to display device number
-Information about available cells.GET {base_url}/api/2.0.0/public/orders/device/{device_uid}/cells/statuses/?type=5.Response data: use field data.cell_types - size array (use params.width and params.height for analysis)
+Basic device information.GET /.Response data: use data.device field to display device number
+Information about available cells.GET .Response data: use field data.cell_types - size array (use params.width and params.height for analysis)
 The environment: 
-URL backend: https://dev.hub.omnic.solutions/ ( - this is the development environment)
+URL backend: **** ( - this is the development environment)
 Test data: 
 device_uid : 34670a76-6022-4df5-ac1d-68f88589c904
 Criteria for evaluating the implementation:

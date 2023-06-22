@@ -8,7 +8,6 @@ type Props = {}
 export type DeviceNumber = number | undefined
 export type DeviceUId = string | undefined
 
-
 const App = (props: Props) => {
     const [deviceNumber, setDeviceNumber] = useState<DeviceNumber>()
     const [uId, setUId] = useState<DeviceUId>(
@@ -16,8 +15,10 @@ const App = (props: Props) => {
     )
     const backUrl = 'https://dev.hub.omnic.solutions/'
 
-    // console.log(window.location.pathname.split('/')[0])
-
+    useEffect(() => {
+        setUId(window.location.pathname.split('/')[1])
+    }, [window.location.pathname.split('/')[1]])
+    console.log(uId)
     useEffect(() => {
         fetch(`${backUrl}api/2.0.0/public/device/${uId}/`)
             .then((response) => response.json())
@@ -40,7 +41,7 @@ const App = (props: Props) => {
     return (
         <>
             <Header deviceNumber={deviceNumber} />
-            <Main deviceUId={uId} backUrl={backUrl}/>
+            <Main deviceUId={uId} backUrl={backUrl} />
         </>
     )
 }
